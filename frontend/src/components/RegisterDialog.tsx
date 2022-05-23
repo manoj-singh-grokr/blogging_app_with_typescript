@@ -1,15 +1,16 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Grid, InputAdornment, Modal, styled } from "@mui/material";
-
-import PasswordIcon from "@mui/icons-material/Password";
-import EmailIcon from "@mui/icons-material/Email";
-import * as Yup from "yup";
+import { Formik, Form } from "formik";
+import { Grid, Modal, styled } from "@mui/material";
+import {
+  registerValidationSchema,
+  EmailField,
+  PasswordField,
+  ConfirmPasswordField,
+  FirstNameField,
+  LastNameField,
+} from "./InputFields";
 
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { registerUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store";
@@ -31,14 +32,6 @@ const style = {
   textAlign: "center",
 };
 
-const validationSchema = Yup.object({
-  email: Yup.string().required("email is required!"),
-  password: Yup.string().required("password is required!"),
-  confirmPassword: Yup.string()
-    .required("Please confirm your password")
-    .oneOf([Yup.ref("password")], "Passwords do not match"),
-});
-
 interface Props {
   open: boolean;
   handleClose: () => void;
@@ -56,8 +49,9 @@ const RegisterDialog: React.FC<Props> = ({ open, handleClose }) => {
   const dispatch = useDispatch<AppDispatch>();
   const handleSubmit = (values: any) => {
     dispatch(registerUser(values));
+    handleClose();
   };
-    
+
   return (
     <BlurryModal
       open={open}
@@ -82,7 +76,7 @@ const RegisterDialog: React.FC<Props> = ({ open, handleClose }) => {
           <h2>Register</h2>
           <Formik
             initialValues={initialValues}
-            validationSchema={validationSchema}
+            validationSchema={registerValidationSchema}
             validateOnBlur={false}
             onSubmit={(values, { setSubmitting }) => {
               handleSubmit(values);
@@ -91,109 +85,11 @@ const RegisterDialog: React.FC<Props> = ({ open, handleClose }) => {
           >
             {({ isSubmitting }) => (
               <Form>
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="firstName"
-                  label="First Name"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "0.5rem 3rem",
-                  }}
-                />
-                <ErrorMessage
-                  name="firstName"
-                  component="div"
-                  className="error"
-                />
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="lastName"
-                  label="Last Name"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "0.5rem 3rem",
-                  }}
-                />
-                <ErrorMessage
-                  name="lastName"
-                  component="div"
-                  className="error"
-                />
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="email"
-                  label="Email"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "0.5rem 3rem",
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <EmailIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <ErrorMessage name="email" component="div" className="error" />
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="password"
-                  label="Password"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "0.5rem 3rem",
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <PasswordIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="error"
-                />
-
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="confirmPassword"
-                  label="Confirm Password"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "0.5rem 3rem",
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <PasswordIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <ErrorMessage
-                  name="confirmPassword"
-                  component="div"
-                  className="error"
-                />
+                <FirstNameField />
+                <LastNameField />
+                <EmailField />
+                <PasswordField />
+                <ConfirmPasswordField />
                 <Button
                   type="submit"
                   disabled={isSubmitting}

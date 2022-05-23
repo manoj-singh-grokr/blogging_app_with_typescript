@@ -6,6 +6,13 @@
       "lastName": "User",
       "email": "test@gmail.com",
       "password": "password"
+    },
+    {
+      "email": "manojsinghmsr2000@gmail.com",
+      "password": "password",
+      "firstName": "Manoj",
+      "lastName": "Singh",
+      "id": "nTvQQHK"
     }
   ],
   "blogs": [
@@ -38,6 +45,12 @@
       "title": "Portfolio",
       "content": "dfn knf kdsnfkds nfkas ndkf",
       "id": "4sxVe75"
+    },
+    {
+      "userId": "nTvQQHK",
+      "title": "Hey, I'm Manoj, a computer science student.",
+      "content": "I suck and i hate it and i wnat to die . i  dont knwo what to do, i am so confused please kill me, i dont want to live anymore",
+      "id": "wfmJxkm"
     }
   ]
 }

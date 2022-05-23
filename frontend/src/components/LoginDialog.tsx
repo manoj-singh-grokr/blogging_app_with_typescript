@@ -1,17 +1,15 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Grid, InputAdornment, Modal, styled } from "@mui/material";
-
-import PasswordIcon from "@mui/icons-material/Password";
-import EmailIcon from "@mui/icons-material/Email";
-import * as Yup from "yup";
-
+import { Formik, Form } from "formik";
+import { Grid, Modal, styled } from "@mui/material";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store";
 import { fetchUser } from "../slices/userSlice";
-import { useSelector } from "react-redux";
+import {
+  EmailField,
+  PasswordField,
+  loginValidationSchema,
+} from "./InputFields";
 
 const BlurryModal = styled(Modal)((props) => ({
   backdropFilter: props.open ? "blur(5px)" : "none",
@@ -29,11 +27,6 @@ const style = {
   p: 4,
   textAlign: "center",
 };
-
-const validationSchema = Yup.object({
-  email: Yup.string().required("email is required!"),
-  password: Yup.string().required("password is required!"),
-});
 
 interface Props {
   open: boolean;
@@ -77,59 +70,19 @@ const LoginDialog: React.FC<Props> = ({ open, handleClose }) => {
           <h2>LOGIN</h2>
           <Formik
             initialValues={initialValues}
-            validationSchema={validationSchema}
+            validationSchema={loginValidationSchema}
+            validateOnChange={false}
             validateOnBlur={false}
             onSubmit={(values, { setSubmitting }) => {
+              console.log(values);
               handleSubmit(values);
               setSubmitting(false);
             }}
           >
             {({ isSubmitting }) => (
               <Form>
-                <Field
-                  as={TextField}
-                  type="text"
-                  name="email"
-                  label="Email"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "1rem 3rem",
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <EmailIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <ErrorMessage name="email" component="div" className="error" />
-                <Field
-                  as={TextField}
-                  type="password"
-                  name="password"
-                  label="Password"
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    width: 300,
-                    margin: "1rem 3rem",
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <PasswordIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="error"
-                />
+                <EmailField />
+                <PasswordField />
                 <Button
                   type="submit"
                   disabled={isSubmitting}

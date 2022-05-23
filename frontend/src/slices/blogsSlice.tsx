@@ -45,7 +45,6 @@ const postsSlice = createSlice({
       })
       .addCase(fetchBlogs.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // Add any fetched posts to the array
         state.blogs = action.payload;
       })
       .addCase(fetchBlogs.rejected, (state, action) => {
