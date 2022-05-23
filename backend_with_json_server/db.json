@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "test@gmail.com",
+      "password": "password"
+    }
+  ],
+  "blogs": [
+    {
+      "userId": "1",
+      "id": "1",
+      "title": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis massa maximus, molestie neque eleifend, tristique lorem. Vestibulum nec orci sagittis, placerat eros non, vehicula metus. Suspendisse blandit augue id ipsum malesuada auctor. Suspendisse vel pretium enim. Suspendisse iaculis elementum leo in ullamcorper. Morbi egestas sapien ultricies justo finibus, eu vulputate urna commodo. Aenean eu dictum risus, sit amet vulputate massa. Maecenas sagittis varius mauris, ut faucibus tortor volutpat ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur congue gravida nibh, ac facilisis dui lacinia ac. Fusce mi nibh, tempus at laoreet id, faucibus non ligula. Maecenas tellus massa, vestibulum sit amet ex vel, tristique efficitur justo. Curabitur ex odio, tristique ac ligula in, commodo volutpat mauris. Nam rutrum, sapien nec eleifend fermentum, ligula nibh vulputate sapien, nec lobortis quam massa vel nulla. Etiam ante arcu, tempus quis nisl vel, tempor fringilla enim."
+    },
+    {
+      "userId": "1",
+      "id": "2",
+      "title": "Neque porro quisquam est qui dolorem ipsum quia dolor",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis massa maximus, molestie neque eleifend, tristique lorem. Vestibulum nec orci sagittis, placerat eros non, vehicula metus. Suspendisse blandit augue id ipsum malesuada auctor. Suspendisse vel pretium enim. Suspendisse iaculis elementum leo in ullamcorper. Morbi egestas sapien ultricies justo finibus, eu vulputate urna commodo. Aenean eu dictum risus, sit amet vulputate massa. Maecenas sagittis varius mauris, ut faucibus tortor volutpat ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur congue gravida nibh, ac facilisis dui lacinia ac. Fusce mi nibh, tempus at laoreet id, faucibus non ligula. Maecenas tellus massa, vestibulum sit amet ex vel, tristique efficitur justo. Curabitur ex odio, tristique ac ligula in, commodo volutpat mauris. Nam rutrum, sapien nec eleifend fermentum, ligula nibh vulputate sapien, nec lobortis quam massa vel nulla. Etiam ante arcu, tempus quis nisl vel, tempor fringilla enim."
+    },
+    {
+      "userId": "1",
+      "id": "3",
+      "title": "Neque porro quisquam est qui dolorem ipsum quia dolor fkjn bjkf sdbjk",
+      "content": "Duis quis massa maximus, molestie neque eleifend, tristique lorem. Vestibulum nec orci sagittis, placerat eros non, vehicula metus. Suspendisse blandit augue id ipsum malesuada auctor. Suspendisse vel pretium enim. Suspendisse iaculis elementum leo in ullamcorper. Morbi egestas sapien ultricies justo finibus, eu vulputate urna commodo. Aenean eu dictum risus, sit amet vulputate massa. Maecenas sagittis varius mauris, ut faucibus tortor volutpat ut. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur congue gravida nibh, ac facilisis dui lacinia ac. Fusce mi nibh, tempus at laoreet id, faucibus non ligula. Maecenas tellus massa, vestibulum sit amet ex vel, tristique efficitur justo. Curabitur ex odio, tristique ac ligula in, commodo volutpat mauris. Nam rutrum, sapien nec eleifend fermentum, ligula nibh vulputate sapien, nec lobortis quam massa vel nulla. Etiam ante arcu, tempus quis nisl vel, tempor fringilla enim."
+    },
+    {
+      "userId": "1",
+      "title": "Most popular articles app",
+      "content": "I made a simple blogging app and it got confusing as hellĪ",
+      "id": "i92cCCM"
+    },
+    {
+      "userId": "1",
+      "title": "Portfolio",
+      "content": "dfn knf kdsnfkds nfkas ndkf",
+      "id": "4sxVe75"
+    }
+  ]
+}

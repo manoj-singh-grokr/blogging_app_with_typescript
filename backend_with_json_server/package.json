@@ -1,0 +1,14 @@
+{
+  "name": "backend_with_json_server",
+  "version": "1.0.0",
+  "description": "fake backend api for blogging app",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
