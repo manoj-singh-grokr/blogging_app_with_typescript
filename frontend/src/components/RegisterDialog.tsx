@@ -78,6 +78,7 @@ const RegisterDialog: React.FC<Props> = ({ open, handleClose }) => {
             initialValues={initialValues}
             validationSchema={registerValidationSchema}
             validateOnBlur={false}
+            validateOnChange={false}
             onSubmit={(values, { setSubmitting }) => {
               handleSubmit(values);
               setSubmitting(false);

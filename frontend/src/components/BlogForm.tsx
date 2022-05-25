@@ -85,6 +85,7 @@ const BlogForm: React.FC<Props> = () => {
               type="submit"
               disabled={isSubmitting}
               variant="contained"
+              role="blogsubmitbutton"
               sx={{ marginTop: "1rem", width: 100 }}
             >
               Submit

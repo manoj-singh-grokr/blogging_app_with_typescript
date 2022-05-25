@@ -87,6 +87,7 @@ const LoginDialog: React.FC<Props> = ({ open, handleClose }) => {
                   type="submit"
                   disabled={isSubmitting}
                   variant="contained"
+                  role="loginButton"
                   sx={{ marginLeft: "10%", marginTop: "1rem", width: 100 }}
                 >
                   Submit
