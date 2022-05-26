@@ -9,8 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LoginDialog from "./LoginDialog";
 import RegisterDialog from "./RegisterDialog";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../store";
-import { logout } from "../slices/userSlice";
+import { AppDispatch } from "../redux/store";
+import { logout } from "../redux/slices/userSlice";
 
 const NavBar = () => {
   const userInfo = useSelector((state: any) => state.user.userInfo);

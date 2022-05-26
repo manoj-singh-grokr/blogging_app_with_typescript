@@ -84,6 +84,7 @@ const HomePage: React.FC<Props> = () => {
           <Button
             variant="outlined"
             size="large"
+            role="createBlogButton"
             sx={buttonStyle}
             onClick={handleClick}
           >

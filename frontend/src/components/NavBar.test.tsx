@@ -1,7 +1,7 @@
 import Navbar from "./NavBar";
 import { screen } from "@testing-library/react";
 import { mockStore, renderWithRedux } from "../utils/test-utils";
-import reducer, { fetchUser } from "../slices/userSlice";
+import reducer, { fetchUser } from "../redux/slices/userSlice";
 
 test("Navbar shows blogs and logout when logged in", async () => {
   let store = mockStore({

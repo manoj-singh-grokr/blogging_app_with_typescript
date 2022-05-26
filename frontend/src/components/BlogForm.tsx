@@ -7,8 +7,8 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../store";
-import { addBlog } from "../slices/blogsSlice";
+import { AppDispatch } from "../redux/store";
+import { addBlog } from "../redux/slices/blogsSlice";
 
 const validationSchema = Yup.object({
   title: Yup.string().required("title is required!"),
@@ -85,7 +85,7 @@ const BlogForm: React.FC<Props> = () => {
               type="submit"
               disabled={isSubmitting}
               variant="contained"
-              role="blogsubmitbutton"
+              role="blogSubmitButton"
               sx={{ marginTop: "1rem", width: 100 }}
             >
               Submit

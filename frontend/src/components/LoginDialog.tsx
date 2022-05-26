@@ -3,8 +3,8 @@ import { Formik, Form } from "formik";
 import { Grid, Modal, styled } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../store";
-import { fetchUser } from "../slices/userSlice";
+import { AppDispatch } from "../redux/store";
+import { fetchUser } from "../redux/slices/userSlice";
 import {
   EmailField,
   PasswordField,

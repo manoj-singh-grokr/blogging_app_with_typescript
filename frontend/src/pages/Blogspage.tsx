@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import Blogs from "../components/Blogs";
-import { fetchBlogs } from "../slices/blogsSlice";
-import { AppDispatch } from "../store";
+import { fetchBlogs } from "../redux/slices/blogsSlice";
+import { AppDispatch } from "../redux/store";
 
 const Blogspage = () => {
   const userInfo = useSelector((state: any) => state.user.userInfo);

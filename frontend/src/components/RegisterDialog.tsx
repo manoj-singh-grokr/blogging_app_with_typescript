@@ -11,9 +11,9 @@ import {
 } from "./InputFields";
 
 import Button from "@mui/material/Button";
-import { registerUser } from "../slices/userSlice";
+import { registerUser } from "../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../store";
+import { AppDispatch } from "../redux/store";
 
 const BlurryModal = styled(Modal)((props) => ({
   backdropFilter: props.open ? "blur(5px)" : "none",
@@ -95,6 +95,7 @@ const RegisterDialog: React.FC<Props> = ({ open, handleClose }) => {
                   type="submit"
                   disabled={isSubmitting}
                   variant="contained"
+                  role="registerButton"
                   sx={{ marginLeft: "10%", marginTop: "1rem", width: 100 }}
                 >
                   Register
