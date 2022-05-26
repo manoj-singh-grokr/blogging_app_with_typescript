@@ -17,8 +17,8 @@ export const registerValidationSchema = Yup.object({
   email: Yup.string().required("email is required!"),
   password: Yup.string().required("password is required!"),
   confirmPassword: Yup.string()
-    .required("Please confirm your password")
-    .oneOf([Yup.ref("password")], "Passwords do not match"),
+    .required("please confirm your password!")
+    .oneOf([Yup.ref("password")], "passwords do not match!"),
 });
 
 export const FirstNameField = () => {

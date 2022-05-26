@@ -17,9 +17,9 @@ const Blogspage = () => {
   const blogs = useSelector((state: any) => state.blogs.blogs);
   return (
     <div>
-        {blogs.map((blog: any) => (
-          <Blogs key={blog.id} title={blog.title} content={blog.content} />
-        ))}
+      {blogs.map((blog: any) => (
+        <Blogs key={blog.id} title={blog.title} content={blog.content} />
+      ))}
     </div>
   );
 };

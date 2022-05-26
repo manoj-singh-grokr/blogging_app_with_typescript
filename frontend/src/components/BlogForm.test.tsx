@@ -12,6 +12,18 @@ test("Blog form is shown", async () => {
   expect(screen.getByRole(/blogsubmitbutton/i)).toBeInTheDocument();
 });
 
+test("errors are displayed when form is empty", async () => {
+  let store = mockStore({
+    user: { userInfo: {} },
+  });
+  renderWithRedux(<BlogForm />, store);
+  await act(async () => {
+    fireEvent.click(screen.getByRole(/blogsubmitbutton/i));
+  });
+  expect(screen.getByText("title is required!")).toBeInTheDocument();
+  expect(screen.getByText("content is required!")).toBeInTheDocument();
+});
+
 test("redirected to blogs page when submitting the form", async () => {
   const store = mockStore({
     user: {

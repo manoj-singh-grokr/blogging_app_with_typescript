@@ -5,7 +5,10 @@ import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import BlogForm from "../components/BlogForm";
 import Blogspage from "../pages/Blogspage";
-import HomePage from "../pages/HomePage";
+
+const HomePage = () => {
+  return <div>Home Page</div>;
+};
 
 export const mockStore = configureStore([thunk]);
 

@@ -19,7 +19,7 @@ test("Blogs are shown when user is logged in", async () => {
     blogs: {
       blogs: [
         {
-          userId: "1",
+          userId: "2",
           id: "1",
           title: "Neque porro quisquam est qui dolorem ipsum quia",
           content:
@@ -42,4 +42,17 @@ test("Blogs are shown when user is logged in", async () => {
     screen.getByText("Neque porro quisquam est qui dolorem ipsum quia")
   ).toBeInTheDocument();
   expect(screen.getByText("random title")).toBeInTheDocument();
+});
+
+test("redirected to home page if user is not logged in", () => {
+  const store = mockStore({
+    user: {
+      userInfo: [],
+      status: "",
+      error: "",
+    },
+    blogs: { blogs: [] },
+  });
+  renderWithRedux(<Blogspage />, store);
+  expect(screen.getByText("Home Page")).toBeInTheDocument();
 });

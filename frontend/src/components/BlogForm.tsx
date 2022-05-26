@@ -51,7 +51,6 @@ const BlogForm: React.FC<Props> = () => {
         validateOnBlur={false}
         validateOnChange={false}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values);
           handleSubmit(values);
           setSubmitting(false);
         }}

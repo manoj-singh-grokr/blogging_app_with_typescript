@@ -181,7 +181,7 @@ const NavBar = () => {
                   className="side-link"
                   onClick={handleOpenRegisterForm}
                 >
-                  SIGNUP
+                  SIGN UP
                 </Link>
               </>
             )}

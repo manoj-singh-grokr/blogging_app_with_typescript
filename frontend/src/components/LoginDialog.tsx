@@ -74,7 +74,6 @@ const LoginDialog: React.FC<Props> = ({ open, handleClose }) => {
             validateOnChange={false}
             validateOnBlur={false}
             onSubmit={(values, { setSubmitting }) => {
-              console.log(values);
               handleSubmit(values);
               setSubmitting(false);
             }}
