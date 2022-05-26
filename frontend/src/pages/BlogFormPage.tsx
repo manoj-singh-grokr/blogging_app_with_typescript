@@ -10,7 +10,7 @@ const BlogFormPage = () => {
     if (!userInfo) {
       navigate("/");
     }
-  }, []);
+  }, [userInfo, navigate]);
   return (
     <div>
       <h1 className="heading">Write a blog</h1>

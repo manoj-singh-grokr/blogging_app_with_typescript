@@ -32,10 +32,12 @@ export const registerUser = createAsyncThunk(
 
 const userSlice = createSlice({
   name: "user",
-  initialState: { userInfo: {}, status: "", error: "" },
+  initialState: { userInfo: [], status: "", error: "" },
   reducers: {
     logout(state: any) {
-      state.user.userInfo = [];
+      state.userInfo = {};
+      state.status = "idle";
+      state.error = "";
     },
   },
   extraReducers(builder) {

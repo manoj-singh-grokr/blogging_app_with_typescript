@@ -35,7 +35,9 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     resetBlogs(state: any) {
-      state.blogs.blogs = [];
+      state.blogs = [];
+      state.status = "idle";
+      state.error = "";
     },
   },
   extraReducers(builder) {

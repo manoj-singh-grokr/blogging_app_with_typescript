@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,11 +11,18 @@ import RegisterDialog from "./RegisterDialog";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { logout } from "../redux/slices/userSlice";
+import { resetBlogs } from "../redux/slices/blogsSlice";
 
 const NavBar = () => {
   const userInfo = useSelector((state: any) => state.user.userInfo);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userInfo[0]) {
+      navigate("/");
+    }
+  }, [userInfo, navigate]);
 
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
@@ -49,7 +56,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/");
+    dispatch(resetBlogs());
   };
 
   return (
@@ -68,7 +75,7 @@ const NavBar = () => {
               fontWeight: "400",
             }}
           >
-            <Link to="/" className="logo-link">
+            <Link to="/" className="logo-link" role="homePageLink">
               BLOG IT
             </Link>
           </Typography>
@@ -103,13 +110,22 @@ const NavBar = () => {
               >
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link to="/blogs" className="side-link">
+                    <Link
+                      to="/blogs"
+                      className="side-link"
+                      role="blogsButtonInMenu"
+                    >
                       BLOGS
                     </Link>
                   </Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="#" className="side-link" onClick={handleLogout}>
+                  <Link
+                    to="#"
+                    className="side-link"
+                    onClick={handleLogout}
+                    role="logoutButtonInMenu"
+                  >
                     LOGOUT
                   </Link>
                 </MenuItem>
@@ -139,6 +155,7 @@ const NavBar = () => {
                       to="#"
                       className="side-link"
                       onClick={handleOpenLoginForm}
+                      role="loginButtonInMenu"
                     >
                       LOGIN
                     </Link>
@@ -149,6 +166,7 @@ const NavBar = () => {
                     to="#"
                     className="side-link"
                     onClick={handleOpenRegisterForm}
+                    role="registerButtonInMenu"
                   >
                     SIGN UP
                   </Link>
@@ -159,10 +177,15 @@ const NavBar = () => {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {userInfo[0] ? (
               <>
-                <Link to="/blogs" className="side-link">
+                <Link to="/blogs" className="side-link" role="blogsButton">
                   BLOGS
                 </Link>
-                <Link to="#" className="side-link" onClick={handleLogout}>
+                <Link
+                  to="#"
+                  className="side-link"
+                  onClick={handleLogout}
+                  role="logoutButton"
+                >
                   LOGOUT
                 </Link>
               </>
@@ -173,6 +196,7 @@ const NavBar = () => {
                   to="#"
                   className="side-link"
                   onClick={handleOpenLoginForm}
+                  role="loginButton"
                 >
                   LOGIN
                 </Link>
@@ -180,6 +204,7 @@ const NavBar = () => {
                   to="#"
                   className="side-link"
                   onClick={handleOpenRegisterForm}
+                  role="registerButton"
                 >
                   SIGN UP
                 </Link>

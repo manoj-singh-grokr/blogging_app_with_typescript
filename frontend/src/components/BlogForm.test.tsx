@@ -63,6 +63,5 @@ test("redirected to blogs page when submitting the form", async () => {
       fireEvent.click(button);
     });
   });
-  expect(screen.getByText("Whatever")).toBeInTheDocument();
-  expect(screen.getByText("Test content")).toBeInTheDocument();
+  expect(screen.getByText("Blogs Page")).toBeInTheDocument();
 });

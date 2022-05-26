@@ -4,7 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import BlogForm from "../components/BlogForm";
-import Blogspage from "../pages/Blogspage";
+
+const BlogsPage = () => {
+  return <div>Blogs Page</div>;
+};
 
 const HomePage = () => {
   return <div>Home Page</div>;
@@ -20,7 +23,7 @@ export const renderWithRedux = (component, store) => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/write" element={<BlogForm />} />
-          <Route path="/blogs" element={<Blogspage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
         </Routes>
       </Provider>
     </BrowserRouter>
