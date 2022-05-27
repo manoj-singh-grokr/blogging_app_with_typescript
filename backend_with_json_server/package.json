@@ -4,7 +4,7 @@
   "description": "fake backend api for blogging app",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server --watch db.json"
+    "json:server": "json-server --watch db.json --port 8080"
   },
   "author": "",
   "license": "ISC",

@@ -33,5 +33,7 @@ describe("login", () => {
       });
       fireEvent.click(screen.getByRole("loginButton"));
     });
+    expect(screen.queryByText(/email is required!/i)).toBeNull();
+    expect(screen.queryByText(/password is required!/i)).toBeNull();
   });
 });
